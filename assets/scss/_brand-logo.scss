@@ -1,0 +1,33 @@
+.brand-slider-container-wrapper {
+    &.style1 {
+        padding: 40px 0;
+        border-bottom: 1px solid $border-color;
+    }
+
+    &.style2 {
+        max-width: 1000px;
+        margin-right: auto;
+        margin-top: -100px;
+        padding-bottom: 40px;
+        border-bottom: 1px solid $border-color;
+
+        @include breakpoint (max-xl4) {
+            padding-top: 30px;
+            max-width: 100%;
+            margin-right: auto;
+            margin-top: 0px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+    }
+}
+
+.brandSliderOne {
+    .swiper-slide {
+        margin-right: 30px !important;
+    }
+}
+
+.brand-logo {
+    text-align: center;
+}

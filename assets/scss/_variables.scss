@@ -1,0 +1,121 @@
+:root {
+
+    --body: #fff;
+    --black: #000;
+    --white: #fff;
+    --theme: #384BFF;
+    --theme2: #18185E;
+    --theme-color3: #F98600;
+    --header: #0F0D1D;
+    --text: #585858;
+    --text-2: #ffffffcc;
+    --border: #E3E3E3;
+    --border2: #242449;
+    --border3: #5262FF;
+    --bg: #F3F7FB;
+    --bg2: #18185E;
+    --bg3: #ffffff33;  
+    --title-color: #0F0D1D;
+    --header: #0F0D1D;
+    --body-color: #ffffff;
+    --smoke-color: #F3F7FB;
+    --smoke-color2: #CFD3FC;
+    --smoke-color3: #F7F7F7;
+    --smoke-color4: #E0E0E0;
+    --black-color: #000000;
+    --gray-color: #F5F5F5;
+    --white-color: #ffffff;
+    --light-color: #BDBDBD;
+    --text-color: #445375;
+    --text-color2: #4F536C;
+    --border-color: #D4DCFF;
+    --title-font: "Rajdhani", sans-serif;
+    --body-font: "Plus Jakarta Sans", sans-serif;
+    --icon-font: "Font Awesome 6 Pro";
+    --main-container: 1410px;
+    --container-gutters: 30px;
+    --section-space: 120px;
+    --section-space-mobile: 80px;
+    --section-title-space: 60px;
+    --ripple-ani-duration: 5s;
+    --box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.06);
+    --box-shadow-2: 0px 4px 25px rgba(56, 255, 96, 0.1);
+
+}
+
+// Theme Color - Defualt Colors
+$black: var(--black);
+$white: var(--white);
+$theme-color: var(--theme);
+$theme-color-2: var(--theme2);
+$text-color: var(--text);
+$text-color-2: var(--text-2);
+$header-color: var(--header);
+$button-color: var(--button);
+$border-color: var(--border);
+$border-color-2: var(--border2);
+$border-color-3: var(--border3);
+$bg-color: var(--bg);
+$bg-color-2: var(--bg2);
+$bg-color-3: var(--bg3);
+$shadow: var(--box-shadow);
+$shadow-2: var(--box-shadow-2);
+
+
+// Color Variation 
+$theme-color3 : var(--theme-color3);
+$title-color : var(--title-color);
+$body-color : var(--body-color);
+$smoke-color : var(--smoke-color);
+$smoke-color2 : var(--smoke-color2);
+$smoke-color3 : var(--smoke-color3);
+$smoke-color4 : var(--smoke-color4);
+$white-color : var(--white-color);
+$light-color : var(--light-color);
+$black-color : var(--black-color);
+$gray-color : var(--gray-color);
+$text-color : var(--text-color);
+$text-color2 : var(--text-color2);
+$border-color : var(--border-color);
+$shadow: var(--box-shadow);
+$shadow-2: var(--box-shadow-2);
+$header-color: var(--header);
+
+// Font Variation
+$icon-font : var(--icon-font);
+
+// Typography
+$title-font : var(--title-font);
+$body-font : var(--body-font);
+
+$body-font-size : 16px;
+$body-line-Height: 26px;
+$body-font-weight: 400;
+$p-line-Height : 1.75;
+
+
+
+
+// Device Variation
+$hd: 1921px; // Large Device Than 1920
+$xxl: 1500px; // Extra large Device
+$ml: 1399px; // Medium Large Device
+$xl: 1299px; // Medium Large Device
+$lg: 1199px; // Large Device (Laptop)
+$md: 991px; // Medium Device (Tablet)
+$sm: 767px; // Small Device
+$xs: 575px; // Extra Small Device
+$vxs: 375px; // Extra Small Device
+
+// Spacing Count with 5x
+$space-count: 20;
+
+// Section Space  For large Device
+$space : var(--section-space);
+$space-extra : calc(var(--section-space) - 45px);
+$space-extra2 : calc(var(--section-space) - 60px);
+$space2 : calc(var(--section-space) - 20px);
+
+// Section Space On small Device
+$space-mobile : var(--section-space-mobile);
+$space-mobile-extra: calc(var(--section-space-mobile) - 30px);

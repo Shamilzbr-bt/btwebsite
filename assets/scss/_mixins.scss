@@ -1,0 +1,671 @@
+@use "sass:math";
+
+@mixin background-content($repeat: no-repeat, $size: cover, $position: center center) {
+  background-repeat: $repeat;
+  background-size: $size;
+  background-position: $position;
+}
+
+@mixin overlay($opacity: $opacity, $z-index: 0) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: $opacity;
+  z-index: $z-index;
+}
+
+@mixin equal-size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin height-lh($height, $lineheight: $height) {
+  height: $height;
+  line-height: $lineheight;
+}
+
+@mixin equal-size-lineHeight($width, $height: $width, $Lheight: $width) {
+  width: $width;
+  height: $height;
+  line-height: $Lheight;
+}
+
+@mixin flex-position($display, $contet, $items) {
+  display: $display;
+  justify-content: $contet;
+  align-items: $items;
+}
+
+@mixin center-position($top: $top, $left: $top) {
+  position: absolute;
+  top: $top;
+  left: $top;
+  transform: translate(-#{$top}, -#{$top});
+}
+
+@mixin inputPlaceholder() {
+  $selector: '';
+  $prefixes: (
+    moz: "::-moz",
+    webkit: "::-webkit",
+    ie: ":-ms"
+  );
+
+@each $prop,
+$value in $prefixes {
+  @if $prop !="moz" {
+    $selector: #{$value}-input-placeholder;
+  }
+
+  @else {
+    $selector: #{$value}-placeholder;
+  }
+
+  @if & {
+    &#{$selector} {
+      @content;
+    }
+  }
+
+  @else {
+    #{$selector} {
+      @content;
+    }
+  }
+}
+
+&::placeholder {
+  @content;
+}
+}
+
+
+
+// Mixin to place items on a circle
+@mixin on-circle($item-count, $circle-size, $item-size, $rotCount: 0, $angleCount: 360) {
+
+
+  >* {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: $item-size;
+    height: $item-size;
+    line-height: $item-size;
+    margin: -($item-size * 0.5);
+
+    $angle: #{$angleCount / $item-count};
+    $rot: $rotCount;
+
+    @for $i from 1 through $item-count {
+      &:nth-of-type(#{$i}) {
+        transform:
+          rotate($rot * 1deg) translate($circle-size * 0.5) rotate($rot * -1deg);
+      }
+
+      $rot: $rot+$angle;
+    }
+  }
+}
+
+@mixin transition($properties: all, $duration: 0.3s, $timingFunction: ease, $delay: 0s) {
+  transition: $properties $duration $timingFunction $delay;
+}
+
+
+@mixin transition-delay($itemcount: 1, $transitionCount: 0.0s) {
+  $transition: $transitionCount;
+
+  @for $i from 1 through $itemcount {
+    &:nth-of-type(#{$i}) {
+      transition-delay: ($transition + $transitionCount);
+    }
+
+    $transition: $transition+0.1s;
+  }
+}
+
+// Responsive Query
+@mixin hd {
+
+  /* Hight Resoulation devices */
+  @media (min-width: #{$hd + 1}) {
+    @content;
+  }
+}
+
+@mixin xxl {
+
+  /* Extra large devices */
+  @media (max-width: #{$xxl}) {
+    @content;
+  }
+}
+
+@mixin ml {
+
+  /* Medium Large devices */
+  @media (max-width: #{$ml}) {
+    @content;
+  }
+}
+
+@mixin xl {
+
+  /* Medium Large devices */
+  @media (max-width: #{$xl}) {
+    @content;
+  }
+}
+
+@mixin lg {
+
+  /* Large devices */
+  @media (max-width: #{$lg}) {
+    @content;
+  }
+}
+
+@mixin md {
+
+  /* Medium devices */
+  @media (max-width: #{$md}) {
+    @content;
+  }
+}
+
+@mixin sm {
+
+  /* Small devices */
+  @media (max-width: #{$sm}) {
+    @content;
+  }
+}
+
+@mixin xs {
+
+  /* Extra small devices */
+  @media (max-width: #{$xs}) {
+    @content;
+  }
+}
+
+@mixin vxs {
+
+  /* Extra small devices */
+  @media (max-width: #{$vxs}) {
+    @content;
+  }
+}
+
+@mixin rtl {
+
+  /* rtl Support */
+  [dir="rtl"] {
+    @content;
+  }
+}
+
+
+
+
+
+
+
+
+@mixin breakpoint($point) {
+  @if $point==xsmall {
+    @media (min-width: 450px) {
+      @content ;
+    }
+  }
+
+  @else if $point==max-xxsmall {
+    @media (max-width:450px) {
+      @content ;
+    }
+  }
+
+  @if $point==xxs {
+    @media (min-width: 470px) {
+      @content ;
+    }
+  }
+
+  @else if $point==max-xxs {
+    @media (max-width:470px) {
+      @content ;
+    }
+  }
+
+  @if $point==xs {
+    @media (min-width: 500px) {
+      @content ;
+    }
+  }
+
+  @else if $point==max-xs {
+    @media (max-width: 500px) {
+      @content ;
+    }
+  }
+
+  @if $point==sm {
+    @media (min-width: 576px) {
+      @content ;
+    }
+  }
+
+  @else if $point==max-sm {
+    @media (max-width: 575px) {
+      @content ;
+    }
+  }
+
+  @else if $point==md {
+    @media (min-width: 768px) {
+      @content ;
+    }
+  }
+
+  @else if $point==max-md {
+    @media (max-width: 767px) {
+      @content ;
+    }
+  }
+
+  @else if $point==lg {
+    @media (min-width: 992px) {
+      @content ;
+    }
+  }
+
+  @else if $point==max-lg {
+    @media (max-width: 991px) {
+      @content ;
+    }
+  }
+
+  @else if $point==xl {
+    @media (min-width: 1200px) {
+      @content ;
+    }
+  }
+
+  @else if $point==max-xl {
+    @media (max-width: 1199px) {
+      @content ;
+    }
+  }
+
+  @else if $point==xxl {
+    @media (min-width: 1400px) {
+      @content ;
+    }
+  }
+
+  @else if $point==max-xxl {
+    @media (max-width: 1399px) {
+      @content ;
+    }
+  }
+
+  @else if $point==xxxl {
+    @media (min-width: 1600px) {
+      @content ;
+    }
+  }
+
+  @else if $point==max-xxxl {
+    @media (max-width: 1600px) {
+      @content ;
+    }
+  }
+
+  @else if $point==xl4 {
+    @media (min-width: 1899px) {
+      @content ;
+    }
+  }
+
+  @else if $point==max-xl4 {
+    @media (max-width: 1899px) {
+      @content ;
+    }
+  }
+}
+
+@mixin before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+}
+
+
+@mixin flex {
+  display: flex;
+  align-items: center;
+}
+
+@mixin transition {
+  transition: all 0.4s ease-in-out;
+}
+
+@mixin imgw {
+  width: 100%;
+  height: 100%;
+}
+
+
+
+/*-- margin Left And Right --*/
+@for $i from 1 through $space-count {
+  .mx-#{5 * $i} {
+    margin-right: 5px *$i;
+    margin-left: 5px *$i;
+  }
+}
+
+/*-- margin Top And Bottom --*/
+@for $i from 1 through $space-count {
+  .my-#{5 * $i} {
+    margin-top: 5px *$i;
+    margin-bottom: 5px *$i;
+  }
+}
+
+/*-- margin Top --*/
+@for $i from 1 through $space-count {
+  .mt-#{5 * $i} {
+    margin-top: 5px *$i;
+  }
+}
+
+/*-- margin Bottom --*/
+@for $i from 1 through $space-count {
+  .mb-#{5 * $i} {
+    margin-bottom: 5px *$i;
+  }
+}
+
+/*-- margin Left --*/
+@for $i from 1 through $space-count {
+  .ml-#{5 * $i} {
+    margin-left: 5px *$i;
+  }
+}
+
+/*-- margin Right --*/
+@for $i from 1 through $space-count {
+  .mr-#{5 * $i} {
+    margin-right: 5px *$i;
+  }
+}
+
+.mb-200 {
+  margin-bottom: 160px;
+}
+
+.mt-n30 {
+  margin-top: -30px;
+}
+
+.mt-n150 {
+  margin-top: -150px;
+}
+
+.mt-n116 {
+  margin-top: -116px;
+}
+
+.mt-n108 {
+  margin-top: -108px;
+}
+
+.mt-n110 {
+  margin-top: -110px;
+}
+
+.mb-n116 {
+  margin-bottom: -116px;
+}
+
+.mt-n368 {
+  margin-top: -368px;
+}
+
+.mxw-560 {
+  max-width: 560px;
+}
+
+.mxw-586 {
+  max-width: 586px;
+}
+
+.mxw-650 {
+  max-width: 650px;
+}
+
+
+
+
+
+
+
+
+/*-- Padding Left And Right --*/
+@for $i from 1 through $space-count {
+  .px-#{5 * $i} {
+    padding-right: 5px *$i;
+    padding-left: 5px *$i;
+  }
+}
+
+/*-- Padding Top And Bottom --*/
+@for $i from 1 through $space-count {
+  .py-#{5 * $i} {
+    padding-top: 5px *$i;
+    padding-bottom: 5px *$i;
+  }
+}
+
+/*-- Padding Top --*/
+@for $i from 1 through $space-count {
+  .pt-#{5 * $i} {
+    padding-top: 5px *$i;
+  }
+}
+
+/*-- Padding Bottom --*/
+@for $i from 1 through $space-count {
+  .pb-#{5 * $i} {
+    padding-bottom: 5px *$i;
+  }
+}
+
+/*-- Padding Left --*/
+@for $i from 1 through $space-count {
+  .pl-#{5 * $i} {
+    padding-left: 5px *$i;
+  }
+}
+
+/*-- Padding Right --*/
+@for $i from 1 through $space-count {
+  .pr-#{5 * $i} {
+    padding-right: 5px *$i;
+  }
+}
+
+.pb-60 {
+  padding-bottom: 60px;
+}
+
+.pb-105 {
+  padding-bottom: 105px;
+}
+
+.pt-105 {
+  padding-top: 105px;
+}
+
+.pb-170 {
+  padding-bottom: 170px;
+
+  @include sm {
+    padding-bottom: 80px;
+  }
+}
+
+.pb-230 {
+  padding-bottom: 230px;
+}
+
+.pt-225 {
+  padding-top: 225px;
+}
+
+.pt-226 {
+  padding-top: 226px;
+
+  @include sm {
+    padding-top: 112px;
+  }
+}
+
+.pb-233 {
+  padding-bottom: 233px;
+
+  @include sm {
+    padding-bottom: 190px;
+  }
+}
+
+
+.pb-300 {
+  padding-bottom: 300px;
+
+  @include sm {
+    padding-bottom: 190px;
+  }
+}
+
+.pb-377 {
+  padding-bottom: 377px;
+}
+
+.pb-390 {
+  padding-bottom: 390px;
+
+  @include lg {
+    padding-bottom: 250px;
+  }
+
+  @include md {
+    padding-bottom: 180px;
+  }
+}
+
+.pb-425 {
+  padding-bottom: 425px !important;
+}
+
+
+
+
+.space,
+.space-top {
+  padding-top: $space;
+}
+
+.space,
+.space-lg-bottom,
+.space-bottom {
+  padding-bottom: $space;
+}
+
+.space2,
+.space2-top {
+  padding-top: $space2;
+}
+
+.space2,
+.space2-bottom {
+  padding-bottom: $space2;
+}
+
+.space-extra,
+.space-extra-top {
+  padding-top: $space-extra;
+}
+
+.space-extra,
+.space-lg-extra-bottom,
+.space-extra-bottom {
+  padding-bottom: $space-extra;
+}
+
+.space-extra2,
+.space-extra2-top {
+  padding-top: $space-extra2;
+}
+
+.space-extra2,
+.space-extra2-bottom {
+  padding-bottom: $space-extra2;
+}
+
+.custom-space-bottom {
+  padding-bottom: 275px;
+}
+
+@include md {
+
+  .space,
+  .space-top {
+    padding-top: $space-mobile;
+  }
+
+  .custom-space-bottom,
+  .space,
+  .space-bottom {
+    padding-bottom: $space-mobile;
+  }
+
+  .space-extra,
+  .space-extra-top {
+    padding-top: $space-mobile-extra;
+  }
+
+  .space-extra,
+  .space-extra-bottom {
+    padding-bottom: $space-mobile-extra;
+  }
+
+  .space-top-md-none {
+    padding-top: 0;
+  }
+
+  .space-extra2,
+  .space-extra2-top {
+    padding-top: 60px;
+  }
+
+  .space-extra2,
+  .space-extra2-bottom {
+    padding-bottom: 60px;
+  }
+
+  .space-lg-extra-bottom,
+  .space-lg-bottom {
+    padding-bottom: 0;
+  }
+}

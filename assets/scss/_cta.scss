@@ -1,0 +1,344 @@
+.cta-section {
+    position: relative;
+}
+
+.cta-wrapper {
+    padding: 65px 70px;
+    background-color: $theme-color;
+    position: relative;
+    margin-top: 125px;
+
+    @include breakpoint (max-xl) {
+        margin-top: 0;
+    }
+
+    @include breakpoint (max-md) {
+        padding: 55px;
+    }
+
+    @include breakpoint (max-sm) {
+        padding: 45px;
+    }
+
+    .mask-shape {
+        position: absolute;
+        top: 0;
+        left: 21%;
+
+        @include breakpoint (max-xl) {
+            display: none
+        }
+    }
+
+    .circle-shape {
+        position: absolute;
+        bottom: 10px;
+        left: 80px;
+        animation: cir36 10s linear infinite;
+
+        @include breakpoint (max-xl) {
+            display: none;
+        }
+    }
+
+    .cta-image {
+        position: absolute;
+        bottom: 0;
+        left: 100px;
+        height: 357px;
+        max-width: 393px;
+
+        @include breakpoint (max-xxl) {
+            left: 30px;
+        }
+
+        @include breakpoint (max-xl) {
+            display: none;
+        }
+    }
+
+    .cta-items {
+        @include flex;
+        justify-content: space-between;
+        margin-left: 512px;
+        position: relative;
+        z-index: 9;
+
+        @include breakpoint (max-xxl) {
+            margin-left: 350px;
+        }
+
+        @include breakpoint (max-xl) {
+            margin-left: 0;
+        }
+
+        @include breakpoint (max-md) {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            text-align: center;
+        }
+
+        @include breakpoint (max-sm) {
+            gap: 20px;
+        }
+
+        h3 {
+            font-size: 32px;
+            font-weight: bold;
+            color: $white;
+            line-height: 156%;
+
+            @include breakpoint (max-md) {
+                font-size: 28px;
+            }
+
+            @include breakpoint (max-sm) {
+                font-size: 24px;
+            }
+        }
+    }
+}
+
+.cta-banner-2 {
+    position: relative;
+    z-index: 9;
+
+    &::before {
+        @include before;
+        background-color: $white;
+        z-index: -1;
+        top: 50%;
+    }
+
+    .cta-wrapper-2 {
+        padding: 55px 60px;
+        background-color: $theme-color;
+        @include flex;
+        justify-content: space-between;
+
+        @include breakpoint (max-lg) {
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .author-icon {
+            @include flex;
+            gap: 20px;
+            position: relative;
+
+            &::before {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: -50%;
+                content: "";
+                height: 85px;
+                width: 14px;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-image: url('../../assets/img/bar.png');
+
+                @include breakpoint (max-xxl) {
+                    display: none;
+                }
+            }
+
+            .icon {
+                width: 48px;
+                height: 48px;
+                line-height: 48px;
+                text-align: center;
+                background-color: $white;
+                text-align: center;
+                color: $theme-color;
+                border-radius: 50%;
+                position: relative;
+
+                &::before {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    right: 0;
+                    bottom: 0;
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    border: 1px solid $white;
+                    content: "";
+                    transform: translate(-50%, -50%);
+                }
+
+            }
+
+            .content {
+                h4 {
+                    font-weight: 600;
+
+                    a {
+                        color: $white;
+                    }
+                }
+
+                span {
+                    font-size: 14px;
+                    font-weight: 600;
+                    color: $white;
+                    margin-bottom: 5px;
+                    display: inline-block;
+                }
+            }
+        }
+
+        h3 {
+            font-size: 32px;
+            color: $white;
+            line-height: 156%;
+
+            @include breakpoint (max-sm) {
+                font-size: 26px;
+            }
+
+            @include breakpoint (max-lg) {
+                text-align: center;
+            }
+        }
+    }
+}
+
+
+.cta-wrap {
+    &.style1 {
+        position: relative;
+        padding: 64px 73px 62px;
+        background: $theme-color;
+        border-radius: 20px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        -ms-border-radius: 20px;
+        -o-border-radius: 20px;
+        margin-bottom: -185px;
+        z-index: 6;
+
+        .shape {
+            position: absolute;
+            bottom: 0;
+            right: 15%;
+        }
+
+        .section-title {
+            .subtitle {
+                color: $white;
+                font-family: $body-font;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 28px;
+                text-transform: uppercase;
+            }
+
+            .title {
+                color: $white;
+                font-family: $heading-font;
+                font-size: 36px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 46px;
+                letter-spacing: -0.72px;
+                text-transform: capitalize;
+                max-width: 526px;
+            }
+        }
+
+        @include breakpoint (max-md) {
+            padding: 64px 30px 62px;
+        }
+    }
+
+    &.style2 {
+        position: relative;
+        padding: 64px 73px 62px;
+        background: $theme-color;
+        border-radius: 30px;
+        -webkit-border-radius: 30px;
+        -moz-border-radius: 30px;
+        -ms-border-radius: 30px;
+        -o-border-radius: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 47px;
+        z-index: 9;
+
+        .shape1_1 {
+            position: absolute;
+            bottom: 0;
+            left: 43px;
+        }
+
+        .shape1_2 {
+            position: absolute;
+            top: 0;
+            left: 200px;
+        }
+
+        .shape1_3 {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+        .shape1_4 {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+        .cta-thumb {
+            position: absolute;
+            bottom: 0;
+            left: 73px;
+        }
+
+        .cta-title {
+            max-width: 356px;
+            margin-left: 420px;
+            margin-right: 210px;
+
+            @include breakpoint (max-xxl) {
+                max-width: 356px;
+                margin-left: 403px;
+                margin-right: 100px;
+            }
+
+            @include breakpoint (max-xl) {
+                max-width: 356px;
+                margin-left: 43px;
+                margin-right: 100px;
+            }
+        }
+
+        .gt-btn {
+            i {
+                margin-left: 5px;
+            }
+        }
+
+        @include breakpoint (max-xl) {
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        @include breakpoint (max-lg) {
+            padding: 55px 35px 40px;
+        }
+
+        @include breakpoint (max-md) {
+            padding: 40px 15px 40px;
+            flex-direction: column;
+            justify-content: start;
+            gap: 25px;
+        }
+    }
+}

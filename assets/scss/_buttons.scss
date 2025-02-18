@@ -1,0 +1,849 @@
+//>>>>> Component Button Here <<<<<//
+.theme-btn {
+    overflow: hidden;
+    background-color: $theme-color;
+    color: $white;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 0;
+    text-transform: capitalize;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    z-index: 1;
+    line-height: 1;
+    padding: 18px 28px;
+    cursor: pointer;
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    -ms-border-radius: 100px;
+    -o-border-radius: 100px;
+
+    &::before {
+        content: "";
+        background-color: $header-color;
+        width: 0;
+        height: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        -webkit-transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        z-index: -1;
+    }
+
+    &::after {
+        content: "";
+        background-color: $header-color;
+        width: 0;
+        height: 50%;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        -webkit-transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        z-index: -1;
+    }
+
+    i {
+        margin-left: 10px;
+    }
+
+    &:hover {
+        color: $white;
+        border-radius: 100px;
+        -webkit-border-radius: 100px;
+        -moz-border-radius: 100px;
+        -ms-border-radius: 100px;
+        -o-border-radius: 100px;
+
+        &::before,
+        &::after {
+            width: 100%;
+        }
+    }
+
+    &.hover-white {
+
+        &::before,
+        &::after {
+            background-color: $white;
+        }
+
+        &:hover {
+            color: $header-color;
+        }
+    }
+
+    &.bg-white {
+        background-color: $white;
+        color: $header-color;
+
+        &:hover {
+            color: $white;
+        }
+    }
+
+    &.border-white {
+        border: 1px solid $white;
+        background-color: transparent;
+
+        &::before,
+        &::after {
+            background-color: $white;
+        }
+
+        &:hover {
+            color: $header-color !important;
+        }
+    }
+
+    @include breakpoint (max-md) {
+        padding: 20px 32px;
+    }
+
+    @include breakpoint (max-sm) {
+        padding: 18px 30px;
+        font-size: 14px;
+    }
+}
+
+.theme-btn-2 {
+    font-size: 16px;
+    display: inline-block;
+    font-weight: 600;
+    color: $text-color;
+    text-transform: capitalize;
+
+    i {
+        margin-left: 10px;
+    }
+
+    &:hover {
+        color: $theme-color;
+    }
+}
+
+
+// Primary Button 
+.gt-btn {
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    vertical-align: middle;
+    display: inline-block;
+    border: none;
+    text-transform: uppercase;
+    text-align: center;
+    background: $theme-color;
+    color: $white-color;
+    font-family: $body-font;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+    padding: 20px 28px;
+    min-width: 160px;
+    cursor: pointer;
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    -ms-border-radius: 100px;
+    -o-border-radius: 100px;
+
+    i {
+        margin-left: 5px;
+    }
+
+
+
+    &::before {
+        content: "";
+        background-color: $header-color;
+        width: 0;
+        height: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        -webkit-transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        z-index: -1;
+    }
+
+    &::after {
+        content: "";
+        background-color: $header-color;
+        width: 0;
+        height: 50%;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        -webkit-transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        z-index: -1;
+    }
+
+    i {
+        margin-left: 10px;
+    }
+
+    &:hover {
+        color: $white;
+        border-radius: 100px;
+        -webkit-border-radius: 100px;
+        -moz-border-radius: 100px;
+        -ms-border-radius: 100px;
+        -o-border-radius: 100px;
+
+        &::before,
+        &::after {
+            width: 100%;
+        }
+    }
+
+
+    &.style2 {
+        background: $white-color;
+        border-radius: 20px;
+        border: 1px solid $border-color;
+        color: $theme-color;
+        text-align: center;
+        font-family: $body-font;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        @include transition;
+
+        i {
+            margin-left: 5px;
+        }
+
+
+        &::before {
+            content: "";
+            background-color: $theme-color;
+            width: 0;
+            height: 52%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            -webkit-transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+            transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+            z-index: -1;
+        }
+
+        &::after {
+            content: "";
+            background-color: $theme-color;
+            width: 0;
+            height: 50%;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            -webkit-transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+            transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+            z-index: -1;
+        }
+
+        i {
+            margin-left: 10px;
+        }
+
+        &:hover {
+            color: $white;
+            border-radius: 20px;
+
+            &::before,
+            &::after {
+                width: 100%;
+            }
+        }
+
+    }
+
+    &.style3 {
+        background: $theme-color-2;
+        border-radius: 20px;
+        border: 1px solid $border-color;
+        color: $white-color;
+        text-align: center;
+        font-family: $body-font;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        @include transition;
+
+        i {
+            margin-left: 5px;
+        }
+
+        &::before {
+            content: "";
+            background-color: $header-color;
+            width: 0;
+            height: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            -webkit-transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+            transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+            z-index: -1;
+        }
+
+        &::after {
+            content: "";
+            background-color: $header-color;
+            width: 0;
+            height: 50%;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            -webkit-transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+            transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+            z-index: -1;
+        }
+
+        i {
+            margin-left: 10px;
+        }
+
+        &:hover {
+            color: $white;
+            border-radius: 20px;
+
+            &::before,
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+
+
+    &.style4 {
+        padding: 20px 36px;
+        border-radius: 100px;
+        background: $theme-color3;
+        color: $white-color;
+        -webkit-border-radius: 100px;
+        -moz-border-radius: 100px;
+        -ms-border-radius: 100px;
+        -o-border-radius: 100px;
+
+        &:hover {
+            color: $white-color;
+
+            &:before,
+            &:after {
+                border-width: 100%;
+            }
+        }
+    }
+
+    &.style5 {
+        background: $white-color;
+        color: $title-color;
+        min-width: 230px;
+
+
+        &::before {
+            content: "";
+            background-color: $theme-color;
+            width: 0;
+            height: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            -webkit-transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+            transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+            z-index: -1;
+        }
+
+        &::after {
+            content: "";
+            background-color: $theme-color;
+            width: 0;
+            height: 50%;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            -webkit-transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+            transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+            z-index: -1;
+        }
+
+        i {
+            margin-left: 10px;
+        }
+
+        &:hover {
+            color: $white;
+            border-radius: 100px;
+            -webkit-border-radius: 100px;
+            -moz-border-radius: 100px;
+            -ms-border-radius: 100px;
+            -o-border-radius: 100px;
+
+            &::before,
+            &::after {
+                background-color: $title-color;
+                width: 100%;
+            }
+        }
+
+    }
+
+    &.style6 {
+        padding: 20px 36px;
+        border-radius: 100px;
+        background: $theme-color-2;
+        color: $white-color;
+        -webkit-border-radius: 100px;
+        -moz-border-radius: 100px;
+        -ms-border-radius: 100px;
+        -o-border-radius: 100px;
+
+        &:hover {
+            color: $white-color;
+
+            &:before,
+            &:after {
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+
+// Icon Btn
+.icon-btn {
+    display: inline-block;
+    width: var(--btn-size, 40px);
+    height: var(--btn-size, 40px);
+    line-height: var(--btn-size, 40px);
+    font-size: var(--btn-font-size, 16px);
+    background-color: $gray-color;
+    color: $title-color;
+    text-align: center;
+    border-radius: 50%;
+    border: none;
+    transition: 0.4s ease-in-out;
+    position: relative;
+
+    &:hover {
+        background-color: $theme-color;
+        color: $white-color;
+    }
+
+    &.btn-border {
+        background-color: $smoke-color3;
+        border: 1px solid $smoke-color4;
+        line-height: var(--btn-size, 38px);
+
+        &:hover {
+            background: $theme-color;
+            color: $white-color;
+            border-color: $theme-color;
+        }
+    }
+
+    .badge {
+        position: absolute;
+        width: fit-content;
+        display: inline-block;
+        text-align: center;
+        background-color: $theme-color;
+        color: $white-color;
+        padding: 2px 4.1px 1px;
+        font-size: 12px;
+        border-radius: 50%;
+        top: 0px;
+        left: auto;
+        right: -8px;
+        font-weight: 500;
+        transition: 0.3s ease-in-out;
+        border: 1px solid $theme-color;
+    }
+
+    &:hover .badge {
+        background: $white-color;
+        color: $theme-color;
+    }
+
+    &.bg-none {
+        background: transparent;
+        font-size: var(--btn-font-size, 20px);
+        width: auto;
+        padding: 0;
+
+        .badge {
+            right: -12px;
+        }
+
+        &:hover {
+            color: $theme-color;
+        }
+    }
+
+    &.style2 {
+        &:hover {
+            background: $title-color;
+        }
+    }
+}
+
+// Play Button
+.play-btn {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+
+    >i {
+        display: inline-block;
+        width: var(--icon-size, 60px);
+        height: var(--icon-size, 60px);
+        line-height: var(--icon-size, 60px);
+        text-align: center;
+        border-radius: 100px;
+        border: 1px solid $white-color;
+        background: radial-gradient(157.24% 123.22% at 47.19% -0.63%, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.00) 100%);
+        backdrop-filter: blur(21px);
+        color: $white-color;
+        font-size: var(--icon-font-size, 24px);
+        border-radius: 50%;
+        z-index: 1;
+        transition: all ease 0.4s;
+
+        &.fa-play {
+            padding-right: 0.18em;
+        }
+    }
+
+    &:after,
+    &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(56, 56, 59, 0.3);
+        animation-duration: var(--ripple-ani-duration);
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-name: ripple;
+        z-index: -1;
+        border-radius: 50%;
+        transition: all ease 0.4s;
+    }
+
+    &:after {
+        animation-delay: 2s;
+    }
+
+    &:hover {
+        i {
+            background-color: $theme-color-2;
+            color: $white-color;
+        }
+
+        &:after,
+        &:before {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+    }
+
+    &.style2 {
+
+        &:before,
+        &:after {
+            background-color: transparent;
+            border: 1px solid $white-color;
+        }
+    }
+
+    &.style3 {
+        >i {
+            background-color: $theme-color;
+            color: $white-color;
+            font-size: 20px;
+        }
+
+        &:before,
+        &:after {
+            background-color: $white-color;
+        }
+
+        &:hover {
+            >i {
+                background-color: $white-color;
+                color: $theme-color;
+            }
+        }
+    }
+
+    &.style4 {
+        position: absolute;
+        width: 90px;
+        height: 90px;
+        line-height: 90px;
+        text-align: center;
+        top: 15%;
+        left: 75%;
+        transform: translate(-75%, -15%);
+        -webkit-transform: translate(-75%, -15%);
+        -moz-transform: translate(-75%, -15%);
+        -ms-transform: translate(-75%, -15%);
+        -o-transform: translate(-75%, -15%);
+
+        >i {
+            display: inline-block;
+            width: 90px;
+            height: 90px;
+            line-height: 70px;
+            text-align: center;
+            background: $theme-color;
+            border: 9px solid #C3C9FF;
+            border-radius: 50%;
+            z-index: 1;
+            transition: all ease 0.4s;
+            -webkit-transition: all ease 0.4s;
+            -moz-transition: all ease 0.4s;
+            -ms-transition: all ease 0.4s;
+            -o-transition: all ease 0.4s;
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            display: inline-block;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.9);
+            z-index: -1;
+            border-radius: 50%;
+            transition: all ease 0.4s;
+            -webkit-transition: all ease 0.4s;
+            -moz-transition: all ease 0.4s;
+            -ms-transition: all ease 0.4s;
+            -o-transition: all ease 0.4s;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            display: inline-block;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.8);
+            z-index: -1;
+            border-radius: 50%;
+            transition: all ease 0.5s;
+            -webkit-transition: all ease 0.5s;
+            -moz-transition: all ease 0.5s;
+            -ms-transition: all ease 0.5s;
+            -o-transition: all ease 0.5s;
+        }
+    }
+}
+
+// Link Button
+.link-btn {
+    &.style1 {
+        display: inline-block;
+        padding: 10px;
+        border-radius: 4px;
+        background: #F3F7FB;
+        color: $title-color;
+        border: 1px solid #D4DCFF;
+
+        i {
+            margin-left: 5px;
+            width: 18px;
+            height: 18px;
+        }
+
+        &:hover {
+            background: $theme-color;
+            color: $white-color;
+            transition: all 0.4s;
+            -webkit-transition: all 0.4s;
+            -moz-transition: all 0.4s;
+            -ms-transition: all 0.4s;
+            -o-transition: all 0.4s;
+        }
+    }
+
+    &.style2 {
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 4px;
+        background: #F3F7FB;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+
+        &:hover {
+            background: $theme-color;
+            color: $white-color;
+            transition: all 0.4s;
+            -webkit-transition: all 0.4s;
+            -moz-transition: all 0.4s;
+            -ms-transition: all 0.4s;
+            -o-transition: all 0.4s;
+        }
+    }
+}
+
+.line-btn {
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-block;
+    line-height: 0.8;
+    position: relative;
+    padding-bottom: 4px;
+    margin-bottom: -1px;
+    text-transform: uppercase;
+    color: $title-color;
+
+    i {
+        margin-left: 5px;
+        font-size: 0.9rem;
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        background-color: $title-color;
+        transition: all ease 0.4s;
+    }
+
+    &:hover {
+        color: $theme-color;
+
+        &::before {
+            background-color: $theme-color;
+            width: 45px;
+        }
+    }
+}
+
+// Scroll To Top
+.scroll-top {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    display: block;
+    border-radius: 50px;
+    z-index: 10000;
+    opacity: 1;
+    visibility: hidden;
+    transform: translateY(45px);
+    transition: all 300ms linear;
+
+    &:after {
+        content: "\f062";
+        font-family: $icon-font;
+        position: absolute;
+        text-align: center;
+        line-height: 50px;
+        font-size: 20px;
+        color: $theme-color;
+        left: 0;
+        top: 0;
+        height: 50px;
+        width: 50px;
+        cursor: pointer;
+        display: block;
+        z-index: 1;
+        border: 2px solid $theme-color;
+        box-shadow: none;
+        border-radius: 50%;
+    }
+
+    svg {
+        color: $theme-color;
+        border-radius: 50%;
+        background: $white-color;
+
+        path {
+            fill: none;
+        }
+    }
+
+    .progress-circle path {
+        stroke: $theme-color;
+        stroke-width: 20px;
+        box-sizing: border-box;
+        transition: all 400ms linear;
+    }
+
+    &.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+}
+
+
+
+.arrow-btn {
+    .style1 {
+        width: 52px;
+        height: 52px;
+        line-height: 35px;
+        text-align: center;
+        border: 1px solid transparent;
+        border-radius: 50%;
+        background: transparent;
+        box-shadow: 0px 4px 25px 0px rgba(56, 75, 255, 0.08);
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        transition: background 0.4s ease;
+        -webkit-transition: background 0.4s ease;
+        -moz-transition: background 0.4s ease;
+        -ms-transition: background 0.4s ease;
+        -o-transition: background 0.4s ease;
+
+        &:hover {
+            background: $title-color;
+            color: $white-color;
+            border: 1px solid transparent;
+        }
+
+        &.slider-next {
+            margin-left: 5px;
+            background: $theme-color;
+            color: $white-color;
+        }
+    }
+}
+
+
+
+
+
+@include sm {
+    .play-btn {
+        --icon-size: 60px;
+    }
+}
+
+//>>>>> Component Button End <<<<<//
