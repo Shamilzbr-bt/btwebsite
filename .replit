@@ -5,7 +5,8 @@ run = "run"
 channel = "stable-24_05"
 
 [deployment]
-run = ["sh", "-c", "run"]
+run = ["sh", "-c", "php -S 0.0.0.0:8080"]
+deploymentTarget = "cloudrun"
 
 [workflows]
 runButton = "Run"
