@@ -128,8 +128,7 @@
                                 <div class="col-lg-6 wow fadeInUp" data-wow-delay=".5s">
                                     <div class="form-clt">
                                         <span>Service Type</span>
-                                        <input type="text" name="service" id="service" placeholder="Service Type">
-                                    </div>
+                                        <input type="text" name="service" id="service" placeholder="Service Type">                                    </div>
                                 </div>
                                 <div class="col-lg-6 wow fadeInUp" data-wow-delay=".5s">
                                     <div class="form-clt">
@@ -148,6 +147,7 @@
                                     <button type="submit" name="submit" class="theme-btn" style="background-color: #0aa471;">
                                         Send Message 
                                     </button>
+                                    <div class="form-message mt-3"></div>
                                 </div>
                             </div>
                         </form>
