@@ -37,6 +37,10 @@ require_once(__DIR__ . '/../config.php');
                                         </li>
                                     </ul>
                                 </div>
+                                <div class="footer-links mt-4">
+                                    <a href="<?php echo BASE_URL; ?>terms.php">Terms of Service</a> | 
+                                    <a href="<?php echo BASE_URL; ?>privacy.php">Privacy Policy</a>
+                                </div>
                             </div>
                         </div>
                         <div class="col-xl-3 col-md-6 col-12">
