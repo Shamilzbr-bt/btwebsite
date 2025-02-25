@@ -3,11 +3,11 @@
 <!-- header area end -->
 
 <!-- Preloader Start -->
-<div id="preloader" class="preloader">
+<div id="preloader" class="preloader" style="display:none;">
         <div class="animation-preloader">
             <div class="spinner">
             </div>
-            <div class="txt-loading">
+            <div class="txt-loading" style="visibility:hidden;">
                 <span data-text-preloader="B" class="letters-loading">
                     B
                 </span>
