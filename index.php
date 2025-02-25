@@ -565,7 +565,7 @@
                 <div class="col-xl-3 col-lg-4 col-md-6">
                     <div class="service-box-items box-shadow" style="width: 200px;">
                         <div class="icons">
-                            <img src="assets/img/partners/Alfresco.png">
+                            <img src="assets/img/partners/Alfresco.png" alt="Alfresco Partner Logo" loading="lazy">
                         </div>
 
                     </div>
@@ -574,7 +574,7 @@
                 <div class="col-xl-3 col-lg-4 col-md-6">
                     <div class="service-box-items box-shadow" style="width: 200px;">
                         <div class="icons">
-                            <img src="assets/img/partners/Alfresco.png">
+                            <img src="assets/img/partners/Alfresco.png" alt="Alfresco Partner Logo" loading="lazy">
                         </div>
 
                     </div>
@@ -583,7 +583,7 @@
                 <div class="col-xl-3 col-lg-4 col-md-6">
                     <div class="service-box-items box-shadow" style="width: 200px;">
                         <div class="icons">
-                            <img src="assets/img/partners/Alfresco.png">
+                            <img src="assets/img/partners/Alfresco.png" alt="Alfresco Partner Logo" loading="lazy">
                         </div>
 
                     </div>
@@ -592,7 +592,7 @@
                 <div class="col-xl-3 col-lg-4 col-md-6">
                     <div class="service-box-items box-shadow" style="width: 200px;">
                         <div class="icons">
-                            <img src="assets/img/partners/Alfresco.png">
+                            <img src="assets/img/partners/Alfresco.png" alt="Alfresco Partner Logo" loading="lazy">
                         </div>
 
                     </div>
