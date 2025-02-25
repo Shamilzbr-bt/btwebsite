@@ -1,6 +1,6 @@
 <?php 
 //require_once("./config.php"); 
-require_once(realpath($_SERVER["DOCUMENT_ROOT"]) . '/BLOCKTECHTECHNOLOGY/config.php');
+require_once(__DIR__ . '/../config.php');
 ?>
 
  <footer class="footer-section footer-bg">
