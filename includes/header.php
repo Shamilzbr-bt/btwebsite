@@ -9,16 +9,20 @@ require_once(__DIR__ . '/../config.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="BlockTech - Your Partner in Seamless, Secure and Scalable IT Solutions">
-    <meta name="keywords" content="IT solutions, digital transformation, business communications, CRM, cloud services">
+    <meta name="description" content="BlockTech - Leading IT Solutions Provider in Kuwait offering Digital Transformation, Business Communications, CRM & Professional Services">
+    <meta name="keywords" content="IT solutions Kuwait, digital transformation services, business communications solutions, CRM systems, cloud services Kuwait, professional IT services">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://your-domain.com<?php echo $_SERVER['REQUEST_URI']; ?>">
     <!-- ========== Meta Tags ========== -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="ex-coders">
+    <meta name="author" content="BlockTech Technology">
     <meta name="description" content="BlockTech Technology">
+    <meta property="og:title" content="BlockTech Technology - IT Solutions Provider">
+    <meta property="og:description" content="Your Partner in Seamless, Secure and Scalable IT Solutions">
+    <meta property="og:image" content="<?php echo BASE_URL; ?>assets/img/logo/BLOCKTECH_logo1.png">
+    <meta property="og:url" content="<?php echo 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>">
     <!-- ======== Page title ============ -->
     <title>BlockTech Technology</title>
     <!--<< Favcion >>-->
