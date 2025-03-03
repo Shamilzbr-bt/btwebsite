@@ -17,6 +17,9 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    - name: Update Git
+      run: sudo apt-get install git
+
     - name: Validate composer.json and composer.lock
       run: composer validate --strict
 
