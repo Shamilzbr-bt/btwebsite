@@ -172,3 +172,38 @@
 <!-- footer area start -->
 <?php include("./includes/footer.php"); ?>
 <!-- footer area end -->
+
+<form action="sendmail.php" id="contact-form" method="POST" class="contact-form-items">
+    <div class="row g-4">
+        <!-- Form fields go here -->
+        <div class="col-lg-7 wow fadeInUp" data-wow-delay=".9s">
+            <button type="submit" name="submit" class="theme-btn" style="background-color: #0aa471;">
+                Send Message 
+            </button>
+            <div class="form-message mt-3" id="form-message"></div>
+        </div>
+    </div>
+</form>
+
+<script>
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        var form = event.target;
+        var formData = new FormData(form);
+        var formMessage = document.getElementById('form-message');
+
+        fetch(form.action, {
+            method: form.method,
+            body: formData,
+        })
+        .then(response => response.text())
+        .then(text => {
+            formMessage.textContent = text;
+            formMessage.style.color = response.ok ? 'green' : 'red';
+        })
+        .catch(error => {
+            formMessage.textContent = 'An error occurred. Please try again.';
+            formMessage.style.color = 'red';
+        });
+    });
+</script>
